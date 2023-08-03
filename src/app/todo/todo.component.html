@@ -1,0 +1,11 @@
+<h3 class="title">Todo List</h3>
+<div class="todo-container">
+  <input type="text" placeholder="Digite sua tarefa" class="todo-input" [(ngModel)]="inputValue">
+  <button class="todo-button" (click)="saveTask()">Enviar</button>
+</div>
+<div *ngIf="data.length">
+  <ul class="todo-tasks-container">
+    <li *ngFor="let d of data" class="todo-task" [routerLink]="['edit', d.id]"><a >{{d.task}}</a></li>
+  </ul>
+  <button class="remove-tasks-button" (click)="deleteAllTasks()">Remova todas as tasks</button>
+</div>
